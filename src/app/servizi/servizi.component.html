@@ -1,0 +1,50 @@
+<body *ngIf="servizio" class="">
+    <article class=" lg:flex bg-black lg:h-max sm:min-h-screen landscape:h-full sm:max-lg:landscape:pb-12">
+           <section class="lg:w-3/4 sm:max-lg:w-full lg:h-max sm:max-lg:h-256 sm:max-lg:landscape:h-screen">
+<img [src]="servizio.img[0].url" alt="" class="sm:max-lg:h-full object-cover sm:max-lg:w-full lg:h-screen xl:h-screen  lg:w-full sm:max-lg:landscape:h-screen ">
+           </section>
+
+
+
+        
+            <section class="  lg:w-1/2 2xl:pt-32 sm:max-lg:landscape:pt-12 sm:max-lg:landscape:h-128 text-white pb xl:px-20 lg:px-12 px-5   sm:max-lg:h-128  subpixel-antialiased h-screen ">
+            <head class="flex sm:pb-4 ">
+                <h1 class="lg:text-4xl sm:text-6xl text-2xl  md:px-4 antialiased font-semibold sm:pt-16 2xl:pb-12 opacity-0 animate-fadeIn ">{{ servizio.name }}</h1>
+            </head>
+
+            <body class="lg:space-y-12 space-y-16 md:max-lg:landscape:text-md md:text-3xl md:py-8 md:px-4 lg:text-lg  2xl:text-2xl antialiased lg:font-light ">
+                <p class="opacity-0 animate-fadeIn">{{ servizio.description[1]?.text }}</p>
+                
+                <ng-container *ngIf="servizio.description">
+                    <p class="opacity-0 animate-fadeIn antialiased">{{ servizio.description[2]?.text }}</p>
+                  </ng-container>
+                  
+            </body>
+        </section>
+    </article>
+
+
+
+
+    <div class="lg:flex flex-col-reverse lg:flex-row  sm:max-lg:max-h-max sm:max-lg:min-h-screen  w-full lg:h-max sm:mt-12 lg:mt-1">
+        <div class="lg:w-1/2  sm:max-lg:h-129  lg:h-max flex justify-center pb-16  self-center">
+          <img [src]="servizio.img[1].url" alt="Service Image" class="sm:max-lg.h-256 w-full  h-max object-scale-down">
+        </div>
+      
+        <div class="flex-col   self-center xl:space-y-1 sm:space-y-6 pt-2 sm:max-lg:h-max lg:w-1/2">
+          <h1 class="xl:landscape:text-xl sm:landscape:text-4xl   text flex pb-8 sm:text-5xl antialiased sm:max-lg:px-6 lg:px-4">In particolare Stea Progetto si occupa di:</h1>
+          <ul class="sm:max-lg:text-3xl px-12 lg:px-10  sm:landscape:text-xl sm:space-y-8 sm:landscape:space-y-2 antialiased lg:space-y-2 xl:text-xl pb-16  text-gray-700">
+            <li *ngFor="let object of siOcuppaList" class="antialiased">
+              {{object.info}}
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+    
+<app-on-top-button></app-on-top-button>
+
+
+
+</body>
+

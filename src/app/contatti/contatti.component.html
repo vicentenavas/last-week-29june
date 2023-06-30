@@ -1,0 +1,21 @@
+<body class="">
+    <article class="w-full h-screen lg:flex ">
+<section class="lg:w-3/6 lg:h-full max-lg:w-full max-lg:h-1/2    lg:px-12 space-y-6">
+    <div class="mt-32 lg:mb-2 py-10 w-2/5">
+        <header class="text-6xl font-semibold pb-8 ">Contattaci</header>
+<p class="text-lg">Siamo qui per risolvere tutti i vostri dubbi e le vostre domande.</p>
+    </div>
+    <div *ngFor="let contact of contactList" class="flex-col   py-2 text-lg ">
+        <p class="text-3xl font-bold pb-1 ">{{contact.title}}</p>
+<p class="text-xl">{{contact.info}}</p>
+
+
+    </div>
+    <button class="lg:px-16 lg:py-5 text-lg bg-red-500 text-white  rounded-md "   (click)="goToGmail()">Contattaci</button>
+
+</section>
+<section class="lg:w-3/6 lg:h-full max-lg:w-full max-lg:h-1/2 flex self-center " >
+<img src="assets/img/home/img34.webp" alt="" class=" object-scale-down">
+</section>
+    </article>
+</body>

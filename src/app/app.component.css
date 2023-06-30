@@ -1,0 +1,69 @@
+/* Estilos Tailwind CSS para la barra de navegación */
+
+.hamLogo {
+  color: rgb(255, 255, 255);
+}
+
+#custom-menu {
+
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 9999;
+}
+
+/* Estilos iniciales para los elementos */
+.scroll-hide {
+  transition: opacity 1s;
+}
+
+/* Estilos para ocultar los elementos al hacer scroll */
+.scroll-hide.hidden {
+  opacity: 0;
+}
+
+#custom-menu ul {
+  display: flex;
+  flex-direction: column;
+padding-left: 32px;
+padding-right: 12px;
+  align-items: flex-start;
+  flex-grow: 1;
+}
+
+
+
+#custom-menu a {
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+#custom-menu a:hover {
+  color: #ff2600;
+}
+
+/* CSS puro */
+@media (min-width: 1280px) {
+  .xl\:w-16 {
+    width: 4rem;
+  }
+  .xl\:h-16 {
+    height: 4rem;
+  }
+}
+
+@keyframes flyIn {
+   /* Estilos de animación */
+}
+
+.animated-button {
+  position: relative;
+  overflow: hidden;
+}
+
+.animated-button svg {
+  animation: flyIn 0.5s ease-in-out forwards;
+}

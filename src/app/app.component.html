@@ -1,0 +1,89 @@
+  <nav class="fixed w-full z-20 left-0 border-gray-900 dark:border-gray-800 bg-transparent">
+  <div class="w-screen-2xl  flex flex-wrap items-center justify-between mx-auto p-4">
+    <div class="  ">
+      <div class="  scroll-hide">
+        <a href="/" class=" ">
+
+          <img src="assets/img/home/logo1.webP" class="  lg:h-24 lg:w-24 h-16 w-16 sm:max-lg:w-32 sm:max-lg:h-32">
+          
+        </a>
+      </div>
+    </div>
+
+    <button (click)="toggleMenu()" type="button" class="animated-button inline-flex items-center xl:mt-3 md:mt-0 2xl:mr-0 xl:mr-0 text-sm  rounded-lg ">
+      <span class="not-sr-only"></span>
+      <svg class=" lg:h-16 lg:w-16 sm:h-24 sm:w-24 md:landscape:h-16 md:landscape:w-16" viewBox="-3.6 -3.6 31.20 31.20" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#ffffff" transform="matrix(1, 0, 0, 1, 0, 0)rotate(0)">
+        <g id="SVGRepo_bgCarrier" stroke-width="0" transform="translate(0,0), scale(1)">
+          <rect x="-3.6" y="-3.6" width="31.20" height="31.20" rx="15.6" fill="#f5f5f5" strokewidth="0"></rect>
+        </g>
+        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC" stroke-width="0.192"></g>
+        <g id="SVGRepo_iconCarrier">
+          <path d="M4 17H8M12 17H20M4 12H20M4 7H12M16 7H20" stroke="#000000" stroke-width="1.248" stroke-linecap="round" stroke-linejoin="round"></path>
+        </g>
+      </svg>
+    </button>
+    
+  </div>
+</nav>
+
+
+  <router-outlet class=""> </router-outlet>
+  <app-footer></app-footer>
+
+  <!-- Menú desplegado -->
+  <div *ngIf="menuAbierto" id="custom-menu" class="lg:h-screen  sm:w-4/5 sm:landscape:w-2/4 sm:landscape:min-h-screen sm:h-screen  lg:landscape:w-96 lg:p-2 sm:p-10 space-y-10 flex shadow-lg bg-zinc-900 md:max-lg:overflow-y-scroll" #menuContainer>
+    <!-- Contenido del menú -->
+    <button (click)="closeMenu()" type="button" class="close-button self-end lg:pt-9 lg:pr-6 
+    ">
+      <svg class="text-white fill-current md:landscape:h-8 md:landscape:w-8 md:h-16 md:w-16 xl:w-8 xl:h-8 2xl:h-10 2xl:w-10 " version="1.1" id="Capa_1"
+        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+        viewBox="-46.08 -46.08 552.93 552.93" xml:space="preserve" stroke="none"
+        transform="matrix(1, 0, 0, -1, 0, 0)rotate(0)">
+        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+        <g id="SVGRepo_iconCarrier">
+          <path
+            d="M285.08,230.397L456.218,59.27c6.076-6.077,6.076-15.911,0-21.986L423.511,4.565c-2.913-2.911-6.866-4.55-10.992-4.55 c-4.127,0-8.08,1.639-10.993,4.55l-171.138,171.14L59.25,4.565c-2.913-2.911-6.866-4.55-10.993-4.55 c-4.126,0-8.08,1.639-10.992,4.55L4.558,37.284c-6.077,6.075-6.077,15.909,0,21.986l171.138,171.128L4.575,401.505 c-6.074,6.077-6.074,15.911,0,21.986l32.709,32.719c2.911,2.911,6.865,4.55,10.992,4.55c4.127,0,8.08-1.639,10.994-4.55 l171.117-171.12l171.118,171.12c2.913,2.911,6.866,4.55,10.993,4.55c4.128,0,8.081-1.639,10.992-4.55l32.709-32.719 c6.074-6.075,6.074-15.909,0-21.986L285.08,230.397z">
+          </path>
+        </g>
+      </svg>
+    </button>
+
+
+
+
+
+
+        <ul class="text-white 2xl:text-lg md:landscape:text-xl md:landscape:font-semibold  sm:text-4xl antialiased xl:text-sm " >
+      <li class=" sm:max-lg:my-6 lg:my-2 md:max-lg:landscape:my-2 ">
+        <a routerLink="/" class=" ">Home</a>
+      </li>
+      <li class="sm:max-lg:my-6 lg:my-2 md:max-lg:landscape:my-2 ">
+        <a routerLink="/società" class="   ">Società</a>
+      </li>
+      <li class=" sm:max-lg:my-6 lg:my-2 md:max-lg:landscape:my-2 ">
+        <a routerLink="/contatti" class="    ">Contatti</a>
+      </li>
+      <li *ngFor="let links of serviziList" class=" sm:max-lg:my-6 lg:my-2 md:max-lg:landscape:my-2 ">
+        <a [routerLink]="['/servizi', links.id]">{{links.name}}</a>
+      </li>
+
+
+
+    </ul>
+    
+
+    <div class="self-end lg:h-32 md:max-lg-h-16 w-full">
+      <div class="lg:w-1/2 border border-black lg:h-full flex justify-center">
+<img src="assets/img/home/logo.png" alt="" class="lg:h-16 self-center md:max-lg:h-52 md:max-lg:landscape:h-20 ">
+      </div>
+      <div class="lg:w-1/2 border border-black lg:h-full">
+
+      </div>
+    </div>
+
+  </div>
+
+
+
+  
